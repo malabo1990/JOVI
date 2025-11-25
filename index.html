@@ -19,9 +19,8 @@
 </head>
 <body>
     <canvas id="canvas"></canvas>
-
     <div id="status">
-        <img id="status-splash" src="index.png" alt="Loading">
+        <img id="status-splash" src="index.png" alt="Cargando...">
         <progress id="status-progress"></progress>
         <div id="status-notice"></div>
     </div>
@@ -33,31 +32,31 @@
             "canvasResizePolicy": 2,
             "experimentalVK": false,
             "focusCanvas": true,
-            "executable": "index",                    // nombre sin extensión
-            "mainPack": "index.pck",                  // nombre sin extensión
+            "executable": "index",
+            "mainPack": "index.pck",
             "fileSizes": {
-                "index.wasm": 36145869,               // tamaño ORIGINAL (sin comprimir)
-                "index.pck": 14273996                 // tamaño ORIGINAL (sin comprimir)
+                "index.wasm": 36145869,   // ← tamaño SIN comprimir (importante que sea exacto)
+                "index.pck": 14273996     // ← tamaño SIN comprimir
             },
-            // AÑADIMOS ESTO para que use automáticamente .br si el navegador lo soporta
-            "brFiles": ["index.wasm.br", "index.pck.br"]
+            // ← LÍNEA CLAVE PARA GZIP (eliminamos brFiles)
+            "gzipFiles": ["index.wasm.gz", "index.pck.gz"]
         };
 
-        // Si tienes Threads activado en Godot 4.3+ pon esto en true
+        // Si usas Threads en Godot 4.2 / 4.3 / 4.4 ponlo en true
         const GODOT_THREADS_ENABLED = true;
 
         const engine = new Engine(GODOT_CONFIG);
 
         (function() {
-            const statusOverlay   = document.getElementById('status');
-            const statusProgress  = document.getElementById('status-progress');
-            const statusNotice    = document.getElementById('status-notice');
+            const statusOverlay = document.getElementById('status');
+            const statusProgress = document.getElementById('status-progress');
+            const statusNotice = document.getElementById('status-notice');
             let initializing = true;
 
             function setStatusMode(mode) {
                 if (!initializing) return;
                 statusProgress.style.display = mode === 'progress' ? 'block' : 'none';
-                statusNotice.style.display   = mode === 'notice'   ? 'block' : 'none';
+                statusNotice.style.display = mode === 'notice' ? 'block' : 'none';
                 if (mode === 'hidden') {
                     statusOverlay.style.display = 'none';
                     initializing = false;
@@ -70,7 +69,7 @@
                 'onProgress': function(current, total) {
                     if (total > 0) {
                         statusProgress.value = current;
-                        statusProgress.max   = total;
+                        statusProgress.max = total;
                     } else {
                         statusProgress.removeAttribute('value');
                         statusProgress.removeAttribute('max');
@@ -79,7 +78,7 @@
             }).then(() => {
                 setStatusMode('hidden');
             }, (err) => {
-                statusNotice.textContent = (err.message || err || 'Error desconocido');
+                statusNotice.textContent = err.message || err || 'Error desconocido';
                 setStatusMode('notice');
                 console.error(err);
             });
