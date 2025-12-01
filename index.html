@@ -1,69 +1,64 @@
 <!DOCTYPE html>
 <html manifest="index.hyperesources/cache.manifest">
   <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
-	<title>JOVI | Harina de platanos</title>
-	<style>
-		html {
-			height:100%;
-		}
-		body {
-			background-color:#62BC08;
-			margin:0;
-			height:100%;
-		}
-	</style>
-	<!-- copy these lines to your document head: -->
-
-	<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, width=320" />
-	<link href='https://fonts.googleapis.com/css?family=Pacifico&subset=latin' rel='stylesheet' type='text/css'>
-
-    <!-- Básicos y rendimiento -->
+    <!-- CONFIGURACIÓN BÁSICA -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#62BC08">
+    
+    <!-- TÍTULO SEO (ideal 60-70 caracteres) -->
+    <title>JOVI — Harina de Plátano 100% Natural | Guinea Ecuatorial</title>
 
-    <!-- TÍTULO SEO PERFECTO (60-70 caracteres, con marca + beneficio + ubicación) -->
-    <title>JOVI Harina de Plátano 100% Natural | Guinea Ecuatorial</title>
-    
-    <!-- Meta description óptima (150-160 caracteres, llamada a acción implícita) -->
-    <meta name="description" content="Harina de plátano 100% natural producida en Guinea Ecuatorial. Sin gluten, ideal para fufú tradicional, repostería y pastelería. Producto nacional JOVI.">
-    
-    <!-- Keywords (ya casi no se usan, pero por si acaso, pocas y relevantes) -->
-    <meta name="keywords" content="harina de plátano, JOVI, Guinea Ecuatorial, fufú, sin gluten, Malabo, Bata">
-    
+    <!-- DESCRIPTION SEO (ideal 150-160 caracteres) -->
+    <meta name="description" content="Harina de plátano 100% natural producida en Guinea Ecuatorial. Ideal para fufú, repostería y pastelería. Producto nacional JOVI, sin gluten.">
+
+    <!-- KEYWORDS (ya no es necesario, pero válido) -->
+    <meta name="keywords" content="harina de plátano, JOVI, sin gluten, Guinea Ecuatorial, fufú, repostería, Malabo, Bata">
+
+    <!-- AUTOR Y ROBOTS -->
     <meta name="author" content="JOVI Multiservicios">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-    <meta property="og:title" content="JOVI – Harina de Plátano 100% Natural de Guinea Ecuatorial">
-    <meta property="og:description" content="Producto 100% guineano, sin gluten. Perfecta para fufú, pasteles y repostería. Hecha con plátanos locales.">
+    <!-- TIPOGRAFÍA -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&subset=latin" rel="stylesheet">
+
+    <!-- FAVICON -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="imagenes/apple-icon.png">
+
+    <!-- COLORES Y ESTILOS BASE -->
+    <style>
+        html, body {
+            height:100%;
+            margin:0;
+            padding:0;
+            background:#62BC08;
+            overflow:hidden;
+        }
+    </style>
+
+    <!-- PREFETCH Y PRELOAD (optimiza velocidad) -->
+    <link rel="preconnect" href="https://malabo1990.github.io">
+    <link rel="dns-prefetch" href="//malabo1990.github.io">
+    <link rel="preload" href="JOVI.hyperesources/jovi_hype_generated_script.js" as="script">
+
+    <!-- PROPIEDADES OPEN GRAPH (FACEBOOK, WHATSAPP, LINKEDIN) -->
+    <meta property="og:title" content="JOVI – Harina de Plátano 100% Natural">
+    <meta property="og:description" content="Producto 100% guineano, sin gluten. Ideal para fufú y repostería.">
     <meta property="og:image" content="https://malabo1990.github.io/JOVI/imagenes/og-jovi.jpg">
-    <meta property="og:image:alt" content="Bolsa de Harina de Plátano JOVI - 100% Natural">
+    <meta property="og:image:alt" content="Harina de Plátano JOVI - Producto natural">
     <meta property="og:url" content="https://malabo1990.github.io/JOVI/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
 
-    <!-- Twitter Card -->
+    <!-- TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JOVI – Harina de Plátano 100% Natural (Guinea Ecuatorial)">
-    <meta name="twitter:description" content="Sin gluten · Producto nacional · Ideal para fufú y repostería">
+    <meta name="twitter:title" content="JOVI – Harina de Plátano 100% Natural">
+    <meta name="twitter:description" content="Producto nacional sin gluten. Perfecto para fufú y repostería.">
     <meta name="twitter:image" content="https://malabo1990.github.io/JOVI/imagenes/og-jovi.jpg">
 
-    <!-- Favicon e iconos móviles (recomendado tenerlos) -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/imagenes/apple-icon.png">
-
-    <!-- Preconexiones y precarga crítica (velocidad turbo para Hype) -->
-    <link rel="preconnect" href="https://malabo1990.github.io">
-    <link rel="dns-prefetch" href="//malabo1990.github.io">
-    
-    <!-- Pre-carga del JS pesado de Tumult Hype (lo más importante) -->
-    <link rel="preload" href="JOVI.hyperesources/jovi_hype_generated_script.js?25616" as="script" crossorigin>
-
-    <!-- Schema.org mejorado (Organization + LocalBusiness para aparecer en Google Maps y rich snippets) -->
+    <!-- SCHEMA.ORG (Google Rich Results) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -79,38 +74,30 @@
         "addressRegion": "Bioko Norte",
         "addressLocality": "Malabo"
       },
-      "description": "Productores de harina de plátano 100% natural y sin gluten en Guinea Ecuatorial",
+      "description": "Fabricantes de harina de plátano 100% natural y sin gluten en Guinea Ecuatorial",
       "openingHours": "Mo-Fr 09:00-17:00",
       "priceRange": "$$"
     }
     </script>
 
-    <!-- Fondo verde original -->
-    <style>
-        html, body {height:100%; margin:0; padding:0;}
-        body {background-color:#62BC08; overflow:hidden;}
-    </style>
+    <!-- SCRIPT PRINCIPAL DE TUMULT HYPE -->
+    <script defer src="JOVI.hyperesources/jovi_hype_generated_script.js"></script>
 
-    <!-- Carga del script Hype lo más rápido posible -->
-    <script defer src="JOVI.hyperesources/jovi_hype_generated_script.js?25616"></script>
-    
-    <!-- Arranca la animación inmediatamente cuando el script esté listo -->
+    <!-- ARRANQUE AUTÓMATICO DE LA ANIMACIÓN -->
     <script>
-        // Fuerza el inicio de la animación aunque las imágenes no estén cargadas
-        document.addEventListener("DOMContentLoaded", function() {
-            if (typeof HYPE !==, HYPE.documents) {
-                const hypeDoc = HYPE.documents["jovi"];
-                if (hypeDoc) {
-                    hypeDoc.start();
-                    hypeDoc.showSceneNamed(hypeDoc.startingSceneName());
-                }
+        document.addEventListener("DOMContentLoaded", () => {
+            const doc = HYPE.documents?.jovi;
+            if (doc) {
+                try {
+                    doc.start();
+                    doc.showSceneNamed(doc.startingSceneName());
+                } catch(e){}
             }
         });
     </script>
-    
 
-	<!-- end copy -->
-  </head>
+</head>
+
   <body>
 	<!-- copy these lines to your document: -->
 
